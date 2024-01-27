@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body {
+  font-family: "Kanit", sans-serif;
+}
+:root {
+  --main-color: #00bcd4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+main {
+  height: 100vh;
+  width: 100%;
+  padding: 0 10px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+}
+
+main header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main header button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: var(--main-color);
+}
+
+main header i {
+  font-size: 20px;
+}
+
+.container {
+  width: 720px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.container header {
+  font-size: 22px;
+  font-weight: 600;
+  padding: 20px 30px;
+  border-bottom: 1px solid #bfbfbf;
+}
+
+.container form {
+  margin: 35px 30px;
+}
+
+.container form .row-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.container form .row-field .field {
+  height: 50px;
+  width: calc(100% / 2 - 13px);
+  position: relative;
+}
+
+.container form .row-field .field input,
+.container form .message textarea {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding: 0 18px 0 48px;
+  border-radius: 5px;
+  border: 1px solid #bfbfbf;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.container form .message textarea {
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 120px;
+  max-height: 300px;
+  padding: 15px 20px 0 48px;
+}
+
+.container form .row-field .field input:focus,
+.container form .message textarea:focus {
+  border: 2px solid;
+  border-color: var(--main-color);
+}
+
+.container form .row-field .field input:focus ~ i {
+  color: var(--main-color);
+}
+
+.container form .row-field .field input::placeholder,
+.container form .message textarea::placeholder {
+  color: #bfbfbf;
+}
+
+.container .field i {
+  position: absolute;
+  left: 18px;
+  color: #bfbfbf;
+  top: 50%;
+  font-size: 17px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: 0.3s;
+}
+
+.container .button {
+  margin: 25px 0;
+  display: flex;
+  align-items: center;
+}
+
+.container .button button {
+  padding: 13px 25px;
+  font-size: 18px;
+  border: 1.5px solid;
+  border-color: var(--main-color);
+  color: var(--main-color);
+  font-weight: bold;
+  border-radius: 5px;
+  letter-spacing: 0px;
+  overflow: hidden;
+  transition: 0.5s all ease-in-out;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.container .button button:hover {
+  background: var(--main-color);
+  color: #fff;
+  transition: 0.5s all ease-in-out;
+  box-shadow: 0 0 5px var(--main-color), 0 0 25px var(--main-color),
+    0 0 50px var(--main-color), 0 0 200px var(--main-color);
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+  background-color: var(--main-color);
+}
+
+.container .button span {
+  color: var(--main-color);
+  margin-left: 30px;
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .container header {
+    text-align: center;
+  }
+
+  .container form .row-field {
+    margin-bottom: 0;
+    flex-direction: column;
+  }
+
+  .container form .row-field .field {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .container .button button {
+    width: 100%;
+  }
+
+  .container .button {
+    flex-direction: column;
+  }
+
+  .container .button span {
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .container form .message textarea {
+    resize: none;
+  }
+}
